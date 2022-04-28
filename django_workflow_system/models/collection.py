@@ -32,8 +32,10 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
         ("ACTIVITY", "activity"),
     )
     PORTFOLIO_COLLECTION_TYPES = (
-        ("MATH", "math"),
-        ("SCIENCE", "science"),
+        ("DATA SCIENCE", "data science"),
+        ("ANIMATION", "animation"),
+        ("PROGRAMMING LANGUAGES", "programming languages"),
+        ("MATHEMATICS", "mathematics"),
     )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -104,7 +106,7 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
 
     portfolio_description = models.TextField()
     portfolio_category = models.CharField(
-        default=None, choices=PORTFOLIO_COLLECTION_TYPES, max_length=8
+        default=None, choices=PORTFOLIO_COLLECTION_TYPES, max_length=24
     )
 
     class Meta:
