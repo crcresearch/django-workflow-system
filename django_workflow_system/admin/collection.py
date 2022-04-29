@@ -43,6 +43,8 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
         "active",
         "open_assignments",
         "open_subscriptions",
+        "portfolio_description",
+        "portfolio_category",
     )
     filter_horizontal = ["metadata"]
     search_fields = ["name", "category"]
@@ -68,6 +70,8 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
                     ("assignment_only", "recommendable", "active", "ordered"),
                     "description",
                     "category",
+                    "portfolio_category",
+                    "portfolio_description",
                     "metadata",
                 ]
             },

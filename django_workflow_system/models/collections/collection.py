@@ -31,6 +31,12 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
         ("SURVEY", "survey"),
         ("ACTIVITY", "activity"),
     )
+    PORTFOLIO_COLLECTION_TYPES = (
+        ("DATA SCIENCE", "data science"),
+        ("ANIMATION", "animation"),
+        ("PROGRAMMING LANGUAGES", "programming languages"),
+        ("MATHEMATICS", "mathematics"),
+    )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
@@ -96,6 +102,11 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
         symmetrical=False,
         blank=True,
         help_text="Specify which collections a user must complete before accessing this Collection.",
+    )
+
+    portfolio_description = models.TextField()
+    portfolio_category = models.CharField(
+        default=None, choices=PORTFOLIO_COLLECTION_TYPES, max_length=24
     )
 
     class Meta:
