@@ -2,7 +2,7 @@
 import copy
 import itertools
 
-from django_workflow_system.utils import RESPONSE_SCHEMA
+from ...utils import RESPONSE_SCHEMA
 
 
 def get_response_schema(workflow_step_user_input):

@@ -3,7 +3,7 @@ import uuid
 
 from django.db import models
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
+from .abstract_models import CreatedModifiedAbstractModel
 
 
 class WorkflowImageType(CreatedModifiedAbstractModel):

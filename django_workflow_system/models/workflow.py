@@ -4,11 +4,11 @@ import uuid
 from django.conf import settings
 from django.db import models
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.author import WorkflowAuthor
-from django_workflow_system.models.metadata import WorkflowMetadata
-from django_workflow_system.utils.validators import validate_code
-from django_workflow_system.utils.version_validator import version_validator
+from .abstract_models import CreatedModifiedAbstractModel
+from .author import WorkflowAuthor
+from .metadata import WorkflowMetadata
+from ..utils.validators import validate_code
+from ..utils.version_validator import version_validator
 
 
 class Workflow(CreatedModifiedAbstractModel):

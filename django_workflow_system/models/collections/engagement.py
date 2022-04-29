@@ -13,20 +13,20 @@ from django.db import models
 from django.db.models import Subquery, OuterRef, Q
 from django.utils import timezone
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.collections.collection_member import (
+from ..abstract_models import CreatedModifiedAbstractModel
+from ..collections.collection_member import (
     WorkflowCollectionMember,
 )
-from django_workflow_system.models.step import WorkflowStep
-from django_workflow_system.models.step_dependency_group import (
+from ..step import WorkflowStep
+from ..step_dependency_group import (
     WorkflowStepDependencyGroup,
 )
 
-from django_workflow_system.models.collections.collection import WorkflowCollection
-from django_workflow_system.models.collections.engagement_detail import (
+from ..collections.collection import WorkflowCollection
+from ..collections.engagement_detail import (
     WorkflowCollectionEngagementDetail,
 )
-from django_workflow_system.models.workflow import Workflow
+from ..workflow import Workflow
 
 
 class PreviousNextStepDescriptor(TypedDict):

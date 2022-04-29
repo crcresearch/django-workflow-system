@@ -4,8 +4,8 @@ import uuid
 from django.db import models
 from django.utils import timezone
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.step import WorkflowStep
+from ..abstract_models import CreatedModifiedAbstractModel
+from ..step import WorkflowStep
 
 
 class WorkflowCollectionEngagementDetail(CreatedModifiedAbstractModel):

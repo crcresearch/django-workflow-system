@@ -3,10 +3,10 @@ import uuid
 
 from django.db import models
 
-from django_workflow_system.models.collections.collection import WorkflowCollection
+from ..collections.collection import WorkflowCollection
 from .collection_image_type import WorkflowCollectionImageType
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.utils import collection_image_location
+from ..abstract_models import CreatedModifiedAbstractModel
+from ...utils import collection_image_location
 
 
 class WorkflowCollectionImage(CreatedModifiedAbstractModel):

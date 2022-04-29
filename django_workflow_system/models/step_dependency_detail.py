@@ -5,14 +5,14 @@ from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from django.db import models
 from jsonschema import Draft7Validator, SchemaError
 
-from django_workflow_system.models.collections.collection_member import (
+from .collections.collection_member import (
     WorkflowCollectionMember,
 )
-from django_workflow_system.models.step import WorkflowStep
-from django_workflow_system.models.step_dependency_group import (
+from .step import WorkflowStep
+from .step_dependency_group import (
     WorkflowStepDependencyGroup,
 )
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
+from .abstract_models import CreatedModifiedAbstractModel
 
 
 class WorkflowStepDependencyDetail(CreatedModifiedAbstractModel):

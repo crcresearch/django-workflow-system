@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.urls.exceptions import NoReverseMatch
 from rest_framework import serializers
 
-from django_workflow_system.models.collections.engagement import EngagementStateType
+from .....models.collections.engagement import EngagementStateType
 
 from .....models import WorkflowCollection, WorkflowCollectionEngagement
 from .engagement_detail import WorkflowCollectionEngagementDetailSerializer

@@ -4,11 +4,11 @@ import uuid
 from django.core.validators import MinValueValidator
 from django.db import models
 
-from django_workflow_system.models.step_ui_template import WorkflowStepUITemplate
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.metadata import WorkflowMetadata
-from django_workflow_system.models.workflow import Workflow
-from django_workflow_system.utils.validators import validate_code
+from .step_ui_template import WorkflowStepUITemplate
+from .abstract_models import CreatedModifiedAbstractModel
+from .metadata import WorkflowMetadata
+from .workflow import Workflow
+from ..utils.validators import validate_code
 
 
 class WorkflowStep(CreatedModifiedAbstractModel):

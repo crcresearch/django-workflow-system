@@ -7,9 +7,9 @@ from django.db import models
 from django.db.models import Q
 from django.utils import timezone
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.collections.collection import WorkflowCollection
-from django_workflow_system.models.collections.engagement import (
+from ..abstract_models import CreatedModifiedAbstractModel
+from ..collections.collection import WorkflowCollection
+from ..collections.engagement import (
     WorkflowCollectionEngagement,
 )
 

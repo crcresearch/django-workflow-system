@@ -3,7 +3,7 @@ import json
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
 
-from django_workflow_system.models import WorkflowStepUserInputType
+from .models import WorkflowStepUserInputType
 
 
 @csrf_protect

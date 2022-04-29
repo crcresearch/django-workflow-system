@@ -4,10 +4,10 @@ import uuid
 from django.conf import settings
 from django.db import models
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.metadata import WorkflowMetadata
-from django_workflow_system.utils.validators import validate_code
-from django_workflow_system.utils.version_validator import version_validator
+from ..abstract_models import CreatedModifiedAbstractModel
+from ..metadata import WorkflowMetadata
+from ...utils.validators import validate_code
+from ...utils.version_validator import version_validator
 from .collection_dependency import WorkflowCollectionDependency
 
 from django.core.exceptions import ValidationError
@@ -104,9 +104,13 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
         help_text="Specify which collections a user must complete before accessing this Collection.",
     )
 
-    portfolio_description = models.TextField()
+    portfolio_description = models.TextField(null=True, blank=True)
     portfolio_category = models.CharField(
-        default=None, choices=PORTFOLIO_COLLECTION_TYPES, max_length=24
+        default=None,
+        choices=PORTFOLIO_COLLECTION_TYPES,
+        max_length=24,
+        blank=True,
+        null=True,
     )
 
     class Meta:

@@ -17,7 +17,7 @@ from .users import user_endpoints
 
 from .workflows import workflow_endpoints
 from ..views import workflow_api_root
-from django_workflow_system.views import get_user_input_type_helper
+from ...views import get_user_input_type_helper
 
 urlpatterns = [
     path(

@@ -3,7 +3,7 @@ from django.urls import reverse
 import jsonschema
 from rest_framework import serializers
 
-from django_workflow_system.models.collections.engagement import EngagementStateType
+from .....models.collections.engagement import EngagementStateType
 
 
 from .....models import (

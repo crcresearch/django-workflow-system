@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 
 from jsonschema import Draft7Validator, SchemaError
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
+from .abstract_models import CreatedModifiedAbstractModel
 
 
 class WorkflowStepUserInputType(CreatedModifiedAbstractModel):
