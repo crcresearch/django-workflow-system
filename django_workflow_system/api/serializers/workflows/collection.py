@@ -158,6 +158,8 @@ class WorkflowCollectionSummarySerializer(WorkflowCollectionBaseSerializer):
             "metadata",
             "newer_version",
             "dependencies_completed",
+            "portfolio_description",
+            "portfolio_category",
         )
 
 
@@ -193,6 +195,8 @@ class WorkflowCollectionDetailedSerializer(WorkflowCollectionBaseSerializer):
             "metadata",
             "newer_version",
             "dependencies_completed",
+            "portfolio_description",
+            "portfolio_category",
         )
 
 
