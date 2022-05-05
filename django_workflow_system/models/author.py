@@ -4,8 +4,8 @@ import uuid
 from django.conf import settings
 from django.db import models
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.utils import author_media_location
+from .abstract_models import CreatedModifiedAbstractModel
+from ..utils import author_media_location
 
 
 class WorkflowAuthor(CreatedModifiedAbstractModel):

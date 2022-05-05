@@ -7,8 +7,8 @@ from django.db import models
 
 from jsonschema import Draft7Validator, SchemaError
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.utils.validators import validate_code
+from .abstract_models import CreatedModifiedAbstractModel
+from ..utils.validators import validate_code
 
 
 class JSONSchema(CreatedModifiedAbstractModel):

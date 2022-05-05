@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 class DjangoWorkflowSystemConfig(AppConfig):
-    name = "django_workflow_system"
+    name = "dws_parent.django_workflow_system"
 
     def ready(self):
         warning = (

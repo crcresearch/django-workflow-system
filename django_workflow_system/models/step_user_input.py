@@ -9,10 +9,10 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from django_workflow_system.models.abstract_models import CreatedModifiedAbstractModel
-from django_workflow_system.models.step import WorkflowStep
-from django_workflow_system.models.step_user_input_type import WorkflowStepUserInputType
-from django_workflow_system.utils.response_schema_handlers import (
+from .abstract_models import CreatedModifiedAbstractModel
+from .step import WorkflowStep
+from .step_user_input_type import WorkflowStepUserInputType
+from ..utils.response_schema_handlers import (
     date_range_question_schema,
     free_form_question_schema,
     multiple_choice_question_schema,
@@ -20,6 +20,7 @@ from django_workflow_system.utils.response_schema_handlers import (
     single_choice_question_schema,
     true_false_question_schema,
 )
+from ..utils import workflow_step_media_location
 
 
 class WorkflowStepUserInput(CreatedModifiedAbstractModel):
@@ -52,6 +53,10 @@ class WorkflowStepUserInput(CreatedModifiedAbstractModel):
         help_text="Used to specify input, label, options, and correct answers."
     )
     type = models.ForeignKey(WorkflowStepUserInputType, on_delete=models.PROTECT)
+
+    url = models.ImageField(
+        upload_to=workflow_step_media_location, max_length=200, null=True
+    )
 
     class Meta:
         db_table = "workflow_system_step_user_input"
