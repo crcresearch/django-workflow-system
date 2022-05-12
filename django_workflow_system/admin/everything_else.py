@@ -30,6 +30,7 @@ from ..models import (
     WorkflowImageType,
     WorkflowImage,
     WorkflowCollectionRecommendation,
+    WorkflowStepAnswerImage
 )
 
 # assignment.py
@@ -369,3 +370,10 @@ class WorkflowCollectionRecommendationAdmin(admin.ModelAdmin):
     list_display = ["user", "workflow_collection", "start", "end"]
     ordering = ["user"]
     search_fields = USER_SEARCH_FIELDS + ("workflow_collection__code",)
+
+@admin.register(WorkflowStepAnswerImage)
+class  WorkflowStepAnswerImagenAdmin(admin.ModelAdmin):
+    """Profile Option admin."""
+
+    list_display = ["url"]
+    search_fields = ["url"]
