@@ -48,6 +48,7 @@ from .metadata import WorkflowMetadata
 from .abstract_models import CreatedModifiedAbstractModel
 from .workflow_image import WorkflowImage
 from .workflow_image_type import WorkflowImageType
+from .step_answer_image import WorkflowStepAnswerImage
 
 __all__ = [
     "WorkflowAuthor",
@@ -79,4 +80,5 @@ __all__ = [
     "WorkflowImageType",
     "WorkflowMetadata",
     "CreatedModifiedAbstractModel",
+    "WorkflowStepAnswerImage"
 ]

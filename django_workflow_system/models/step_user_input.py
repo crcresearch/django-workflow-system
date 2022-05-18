@@ -19,6 +19,8 @@ from ..utils.response_schema_handlers import (
     numeric_range_question_schema,
     single_choice_question_schema,
     true_false_question_schema,
+    multiple_choice_image_question_schema,
+    single_choice_image_question_schema,
 )
 from ..utils import workflow_step_media_location
 
@@ -55,7 +57,7 @@ class WorkflowStepUserInput(CreatedModifiedAbstractModel):
     type = models.ForeignKey(WorkflowStepUserInputType, on_delete=models.PROTECT)
 
     url = models.ImageField(
-        upload_to=workflow_step_media_location, max_length=200, null=True
+        upload_to=workflow_step_media_location, max_length=200, null=True, verbose_name="Question Image"
     )
 
     class Meta:
@@ -113,6 +115,7 @@ class WorkflowStepUserInput(CreatedModifiedAbstractModel):
         "free_form_question": free_form_question_schema,
         "numeric_range_question": numeric_range_question_schema,
         "multiple_choice_question": multiple_choice_question_schema,
+         "multiple_choice_image_question": multiple_choice_image_question_schema,
         "single_choice_question": single_choice_question_schema,
         "true_false_question": true_false_question_schema,
     }
