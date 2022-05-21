@@ -45,6 +45,7 @@ class WorkflowStepUserInputSerializer(serializers.ModelSerializer):
             "required",
             "type",
             "specification",
+            "url",
         )
 
 
