@@ -8,3 +8,4 @@ from .collection_member import WorkflowCollectionMember
 from .engagement import WorkflowCollectionEngagement
 from .engagement_detail import WorkflowCollectionEngagementDetail
 from .recommendation import WorkflowCollectionRecommendation
+from .collection_portfolio_category import WorkflowCollectionPortfolioCategory

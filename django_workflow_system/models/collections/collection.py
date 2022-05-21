@@ -9,6 +9,7 @@ from ..metadata import WorkflowMetadata
 from ...utils.validators import validate_code
 from ...utils.version_validator import version_validator
 from .collection_dependency import WorkflowCollectionDependency
+from .collection_portfolio_category import WorkflowCollectionPortfolioCategory
 
 from django.core.exceptions import ValidationError
 
@@ -30,12 +31,6 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
     COLLECTION_TYPES = (
         ("SURVEY", "survey"),
         ("ACTIVITY", "activity"),
-    )
-    PORTFOLIO_COLLECTION_TYPES = (
-        ("DATA SCIENCE", "data science"),
-        ("ANIMATION", "animation"),
-        ("PROGRAMMING LANGUAGES", "programming languages"),
-        ("MATHEMATICS", "mathematics"),
     )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -105,12 +100,13 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
     )
 
     portfolio_description = models.TextField(null=True, blank=True)
-    portfolio_category = models.CharField(
-        default=None,
-        choices=PORTFOLIO_COLLECTION_TYPES,
-        max_length=24,
-        blank=True,
+    portfolio_category = models.ForeignKey(
+        WorkflowCollectionPortfolioCategory,
+        to_field="category",
+        on_delete=models.SET_NULL,
         null=True,
+        blank=True,
+        help_text="The category this workflow collection will be sorted into in a user's E-Portfolio",
     )
 
     class Meta:
