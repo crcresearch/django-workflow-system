@@ -19,6 +19,7 @@ from .collections import (
     WorkflowCollectionImageType,
     WorkflowCollectionMember,
     WorkflowCollectionRecommendation,
+    WorkflowCollectionPortfolioCategory,
 )
 
 #############
@@ -59,6 +60,7 @@ __all__ = [
     "WorkflowCollection",
     "WorkflowCollectionMember",
     "WorkflowCollectionImageType",
+    "WorkflowCollectionPortfolioCategory",
     "WorkflowCollectionImage",
     "WorkflowCollectionRecommendation",
     "JSONSchema",
