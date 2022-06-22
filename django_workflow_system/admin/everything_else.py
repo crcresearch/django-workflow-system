@@ -27,6 +27,7 @@ from ..models import (
     WorkflowCollectionEngagementDetail,
     WorkflowMetadata,
     WorkflowCollectionImageType,
+    WorkflowCollectionPortfolioCategory,
     WorkflowImageType,
     WorkflowImage,
     WorkflowCollectionRecommendation,
@@ -355,6 +356,14 @@ class WorkflowAdmin(admin.ModelAdmin):
 @admin.register(WorkflowCollectionImageType)
 class WorkflowCollectionImageTypeAdmin(admin.ModelAdmin):
     list_display = ["type"]
+
+
+# collection_portfolio_category.py
+
+
+@admin.register(WorkflowCollectionPortfolioCategory)
+class WorkflowCollectionPortfolioCategoryAdmin(admin.ModelAdmin):
+    list_display = ["category"]
 
 
 # workflow_image_type.py
