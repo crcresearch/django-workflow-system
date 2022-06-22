@@ -122,6 +122,7 @@ class WorkflowStepUserInput(CreatedModifiedAbstractModel):
         "multiple_choice_image_question": multiple_choice_image_question_schema,
         "single_choice_question": single_choice_question_schema,
         "true_false_question": true_false_question_schema,
+        "single_choice_image_question": single_choice_image_question_schema,
     }
 
     def _load_function_table(self):
