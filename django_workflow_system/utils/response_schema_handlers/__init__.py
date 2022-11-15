@@ -13,5 +13,3 @@ from .multiple_choice_image_question import (
 from .single_choice_image_question import (
     get_response_schema as single_choice_image_question_schema,
 )
-
-

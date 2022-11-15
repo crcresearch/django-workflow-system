@@ -118,8 +118,8 @@ class WorkflowCollectionEngagement(CreatedModifiedAbstractModel):
             .order_by("workflow_order", "order")
         )
 
-        for step in all_collection_steps:
-            print(vars(step), "\n")
+        # for step in all_collection_steps:
+        #     print(vars(step), "\n")
 
         # Special case to prevent crash when collection has no steps.
         if not all_collection_steps:
@@ -150,8 +150,8 @@ class WorkflowCollectionEngagement(CreatedModifiedAbstractModel):
             .order_by("workflowcollectionmember__order")
         )
 
-        for collection in all_collection_workflows:
-            print("Collection Member", vars(collection), "\n")
+        # for collection in all_collection_workflows:
+        #     print("Collection Member", vars(collection), "\n")
 
         all_engagement_details: QuerySet[
             WorkflowCollectionEngagementDetail
