@@ -80,6 +80,13 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
         default=False, help_text="Indicates if collection is ready for use."
     )
 
+    active_secondary = models.BooleanField(
+        default=False, help_text="Indicates if collection is ready for use."
+    )
+    active_core = models.BooleanField(
+        default=False, help_text="Indicates if collection is ready for use."
+    )
+
     # Collections can either represent a survey or a set of activities.
     # This may expand in the future.
     category = models.CharField(default=None, choices=COLLECTION_TYPES, max_length=8)
