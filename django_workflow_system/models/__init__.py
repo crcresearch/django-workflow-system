@@ -82,5 +82,5 @@ __all__ = [
     "WorkflowImageType",
     "WorkflowMetadata",
     "CreatedModifiedAbstractModel",
-    "WorkflowStepAnswerImage"
+    "WorkflowStepAnswerImage",
 ]

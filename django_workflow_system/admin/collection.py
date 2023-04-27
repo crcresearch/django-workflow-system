@@ -45,6 +45,8 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
         "open_subscriptions",
         "portfolio_description",
         "portfolio_category",
+        "active_secondary",
+        "active_core",
     )
     filter_horizontal = ["metadata"]
     search_fields = ["name", "category"]
@@ -67,7 +69,14 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
                 "fields": [
                     ("name", "code"),
                     ("version", "created_by"),
-                    ("assignment_only", "recommendable", "active", "ordered"),
+                    (
+                        "assignment_only",
+                        "recommendable",
+                        "active",
+                        "ordered",
+                        "active_core",
+                        "active_secondary",
+                    ),
                     "description",
                     "category",
                     "portfolio_category",
@@ -203,7 +212,6 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
 
             member: WorkflowCollectionMember
             for member in old_workflow_collection.workflowcollectionmember_set.all():
-
                 old_workflow = Workflow.objects.get(pk=member.workflow.pk)
                 new_workflow = Workflow.objects.get(pk=member.workflow.pk)
 
@@ -289,7 +297,6 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
 
         workflow_collection: WorkflowCollection
         for workflow_collection in queryset:
-
             # close any open assignments and mark their engagements as complete
             workflow_collection.workflowcollectionassignment_set.filter(
                 status__in=(
