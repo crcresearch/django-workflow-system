@@ -30,6 +30,7 @@ class WorkflowStepUserInputType(CreatedModifiedAbstractModel):
     example_specification = models.JSONField(
         help_text="An example of properly formatted json that follows the json_schema."
     )
+    type = models.IntegerField(blank=True, null=True, verbose_name="Question Type")
 
     class Meta:
         db_table = "workflow_system_step_user_input_type"
