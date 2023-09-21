@@ -63,7 +63,7 @@ class WorkflowStepUserInput(CreatedModifiedAbstractModel):
         blank=True,
         verbose_name="Question Image",
     )
-
+    question_type = models.IntegerField(blank=True, null=True, verbose_name="Question Type")
     class Meta:
         db_table = "workflow_system_step_user_input"
         unique_together = ["workflow_step", "ui_identifier"]

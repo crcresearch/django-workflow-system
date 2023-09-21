@@ -31,6 +31,7 @@ class WorkflowStepUserInputType(CreatedModifiedAbstractModel):
         help_text="An example of properly formatted json that follows the json_schema."
     )
 
+
     class Meta:
         db_table = "workflow_system_step_user_input_type"
         verbose_name_plural = "Workflow Step User Input Types"
