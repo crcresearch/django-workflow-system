@@ -115,6 +115,8 @@ class WorkflowCollection(CreatedModifiedAbstractModel):
         blank=True,
         help_text="The category this workflow collection will be sorted into in a user's E-Portfolio",
     )
+    
+    created_date = models.DateTimeField(auto_now=False, auto_now_add=True, null=True, verbose_name="Date Created")
 
     class Meta:
         db_table = "workflow_system_collection"

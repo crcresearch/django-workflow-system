@@ -38,13 +38,15 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
         "name",
         "code",
         "version",
+        "created_date",
         "category",
         "ordered",
         "active",
         "open_assignments",
         "open_subscriptions",
         "portfolio_description",
-        "portfolio_category",
+        "portfolio_category", 
+        
     )
     filter_horizontal = ["metadata"]
     search_fields = ["name", "category"]
@@ -67,6 +69,7 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
                 "fields": [
                     ("name", "code"),
                     ("version", "created_by"),
+                    "created_date",
                     ("assignment_only", "recommendable", "active", "ordered"),
                     "description",
                     "category",
@@ -81,6 +84,7 @@ class WorkflowCollectionAdmin(admin.ModelAdmin):
     readonly_fields = [
         "open_assignments",
         "open_subscriptions",
+        "created_date"
     ]
 
     inlines = [
